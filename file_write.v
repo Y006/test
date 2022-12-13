@@ -1,3 +1,7 @@
+//iverilog仿真指令：
+//iverilog -o file_write.vvp -y ./ file_write.v
+//vvp file_write.vvp
+
 module file_write;
 
    parameter    MAX = 100;
@@ -16,16 +20,8 @@ module file_write;
         num_range = MIN + {$random(seed)} % (MAX-MIN+1);
         $fdisplay(file_handle,"%d",$signed(num_range));
     end
-
-    $fdisplay(file_handle,"姓名：邱金羽 学号：2038010061");
     
     $fclose(file_handle);
    end
 
-
-
 endmodule
- 
-//iverilog仿真指令：
-//iverilog -o file_write.vvp -y ./  h8.v
-//vvp file_write.vvp
